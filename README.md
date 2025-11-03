@@ -13,7 +13,7 @@ To address this, we propose a distillation method **SIKeD**: **S**elf-guided **I
 
 ## Methodology
 
-The SIKeD approach uses an iterative process to improve a Small Language Model (SLM) via data from a Large Language Model (LLM). The steps are shown below.
+SIKeD uses an iterative distillation approach with data mixing to improve a Small Language Model's (SLM's) performance. The steps are shown below.
 
 ![SIKeD Methodology Diagram](methodology_diagram.png)
 
