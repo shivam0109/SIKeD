@@ -1,0 +1,46 @@
+GLOBAL:
+  SEED: 42
+  DATA_PATH: "/cluster/work/sachan/shivam/improving-prompting-strategies/data/knowledge_distillation/gsm8k/llama3-70b-any-at-10/smollm-1.7b-iteration3/all/df-all-cot-biased-epoch3.csv"  # Path to input dataframe 
+  OUTPUT_PATH: "/cluster/work/sachan/shivam/improving-prompting-strategies/model/knowledge_distillation/llama3-70b/lora/action-reward/iteration3/smollm-1.7b/all/selsamp-cot" # Output Directory for saving checkpoints 
+  COLNAME: 'output_answer' # Dataframe column containing response from LLM 
+  SPLIT_RATIO: 0.9 # Split ratio for train and validation  
+  STRATEGY: 'select_sample' # Strategy in ['cot','pot','l2m','select_sample']
+  DATASET_HF: 'gsm8k' # Dataset used from Huggingface 
+  DO_EVAL: False # Perform Validation Flag
+
+MODEL:
+  MODEL_NAME: '/cluster/work/sachan/shivam/improving-prompting-strategies/model/knowledge_distillation/llama3-70b/lora/action-reward/iteration2/smollm-1.7b/all/selsamp-cot/checkpoint-650_merged' # Saved Checkpoint 
+  MAX_SEQ_LENGTH: 1024
+  DTYPE: null # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
+  LOAD_IN_4BIT: False # Use 4bit quantization to reduce memory usage. Can be False.
+
+LORA:
+  r: 16 # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+  lora_alpha: 32
+  lora_dropout: 0 # Supports any, but = 0 is optimized
+  bias: "none" # Supports any, but = "none" is optimized
+  use_gradient_checkpointing: "unsloth" # True or "unsloth" for very long context
+  use_rslora: False # Supports rank stabilized LoRA
+  loftq_config: null
+
+WANDB:
+  REPORT: False
+  API_KEY:
+  PROJECT_NAME:
+  RUN_NAME:
+
+TRAINING_ARGS:
+  evaluation_strategy: "steps"
+  save_total_limit: null
+  logging_steps: 50
+  save_steps: 50
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
+  warmup_steps: 5
+  num_train_epochs: 3
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  lr_scheduler_type: "linear"
+  output_dir: "/cluster/work/sachan/shivam/improving-prompting-strategies/model/knowledge_distillation/llama3-70b/lora/action-reward/iteration3/smollm-1.7b/all/selsamp-cot" # Same as OUTPUT_PATH in GLOBAL['OUTPUT_PATH']
+  # metric_for_best_model: 
+  # optim: 
