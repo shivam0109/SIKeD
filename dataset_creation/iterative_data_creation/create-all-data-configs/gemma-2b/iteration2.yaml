@@ -1,0 +1,4 @@
+SLM_DIR_PATH: '/Users/shivamadarsh/Documents/Studies/sem-4/master-thesis/improve-prompt-strategies/data/knowledge_distillation/action-reward/annotation/llama3-70b-any-at-10/gemma-2b-iteration2/selsamp-biased'
+LLM_DIR_PATH: '/Users/shivamadarsh/Documents/Studies/sem-4/master-thesis/improve-prompt-strategies/data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10'
+EPOCH: 2
+SAVE_DIR: '/Users/shivamadarsh/Documents/Studies/sem-4/master-thesis/improve-prompt-strategies/data/knowledge_distillation/action-reward/annotation/llama3-70b-any-at-10/gemma-2b-iteration2/all-data'

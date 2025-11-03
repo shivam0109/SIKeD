@@ -1,0 +1,10 @@
+max_seq_length: 1024 # Max Sequence Length for tokenization 
+dtype: null # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
+load_in_4_bit: False # Use 4bit quantization to reduce memory usage. Can be False.
+forced_strategy: 'pot' # One of these ['cot', 'pot', 'l2m']
+data: 'gsm8k'
+split: 'train'
+test_run: False # If test_run, only generations will be done only for 10 datapoints
+num_generation_rounds: 10 # How many samples to generate for each training datapoint
+checkpoint_path: '/cluster/work/sachan/shivam/improving-prompting-strategies/model/knowledge_distillation/llama3-70b/lora/action-reward/iteration2/smollm-1.7b/all/selsamp-pot/checkpoint-450'
+save_predictions_dir: '/cluster/work/sachan/shivam/improving-prompting-strategies/data/knowledge_distillation/gsm8k/llama3-70b-any-at-10/smollm-1.7b-iteration3/all'

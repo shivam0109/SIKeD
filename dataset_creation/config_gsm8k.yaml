@@ -1,0 +1,27 @@
+samples:
+  expand: True
+  question_col: "query" 
+  ground_truth_col: "response"
+  llm_response_col: "prediction"
+
+input:
+  cot: "data/llama3-70b/sample_cot.jsonl"
+  pot: "data/llama3-70b/sample_pot.jsonl"
+  l2m: "data/llama3-70b/sample_subques.jsonl"
+  
+output:
+  cot: "data/data_gsm8k/llama3-70b/any-at-10/df_cot.csv"
+  pot: "data/data_gsm8k/llama3-70b/any-at-10/df_pot.csv"
+  l2m: "data/data_gsm8k/llama3-70b/any-at-10/df_l2m.csv"
+  concat: "data/data_gsm8k/llama3-70b/any-at-10/df_concat.csv"
+
+distill_output: 
+  perform: True
+  cot: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_cot_kd.csv"
+  pot: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_pot_kd.csv"
+  l2m: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_l2m_kd.csv"
+  concat: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_concat_kd.csv"
+  concat_cot_biased: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_concat_cot_biased_kd.csv"
+  concat_pot_biased: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_concat_pot_biased_kd.csv"
+  concat_l2m_biased: "data/knowledge_distillation/llama3-70b/data_gsm8k/any-at-10/df_concat_l2m_biased_kd.csv"
+  

@@ -1,0 +1,41 @@
+# Core dependencies for SIKeD project
+
+# Transformers
+transformers==4.40.2
+
+# Unsloth with CUDA 11.8 support
+unsloth @ git+https://github.com/unslothai/unsloth.git
+
+# XFormers - must be < 0.0.26 for compatibility with vllm==0.4.1
+xformers<0.0.26
+
+# Additional dependencies (no deps to avoid conflicts)
+trl
+peft
+accelerate
+bitsandbytes
+
+# VLLM - must be == 0.4.1, newer versions break with xformers<0.0.26
+vllm==0.4.1
+
+# Standard ML/data science packages
+torch
+datasets
+pandas
+numpy
+
+# Other dependencies
+pyyaml
+tqdm
+jsonlines
+sympy
+wandb
+
+# Note: Standard library modules that don't need to be installed:
+# - argparse, json, os, sys, time, signal, re, typing, functools, ast, string, glob
+# - fractions (for Fraction class)
+# - math, io
+# - xml.etree.ElementTree
+# - asyncore (deprecated in Python 3.12+)
+# - shutil, gc, random
+# - subprocess (used in some shell scripts)

@@ -1,0 +1,8 @@
+max_seq_length: 1024 # Max Sequence Length for tokenization 
+dtype: null # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
+load_in_4_bit: False # Use 4bit quantization to reduce memory usage. Can be False.
+data: 'gsm8k' # One of these: [asdiv, svamp, multiarith, gsm8k] 
+svamp_path: '/cluster/work/sachan/shivam/improving-prompting-strategies/data/SVAMP.json'
+asdiv_path: '/cluster/work/sachan/shivam/improving-prompting-strategies/data/ASDiv.xml'
+strategy: 'l2m' # One of these: [cot, pot, l2m, ao, select-sample]
+model_dir: '/cluster/work/sachan/shivam/improving-prompting-strategies/model/knowledge_distillation/llama3-70b/lora/gemma-2b/l2m'  # Directory containing all checkpoints
